@@ -16,7 +16,7 @@ function Enemies (game){
   this.h = 95;
 
   this.framesCounter = 0;
-  this.totalCounter = Math.floor(Math.random() * (100 - 50)+50);
+  this.totalCounter = Math.floor(Math.random() * (100 - 40) + 40);
 
   this.bullets = []; 
   this.lifeE = 3;  
@@ -25,6 +25,9 @@ function Enemies (game){
   console.log(this.x)
   this.y =Math.floor(Math.random()*((this.game.h * 0.8)-(this.game.h * 0.7)+1)+(this.game.h * 0.7));
   this.dx = 1
+
+  this.audio = new Audio();
+  this.audio.src = "music/ak47.mp3"
 
 }
 Enemies.prototype.draw = function() {
@@ -64,6 +67,6 @@ Enemies.prototype.drawBullets = function() {
 
 Enemies.prototype.shoot = function() {
 this.bullets.push(new Bullet(this.game, this.x + this.w  / 2, this.y + this.h ));
-
+this.audio.play();
   
 }

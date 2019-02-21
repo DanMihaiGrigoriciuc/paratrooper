@@ -9,7 +9,10 @@ window.onload = function() {
     document.querySelector('.game-over').style.display = 'none'
   }
  
-  
+  document.querySelector('#win-game').onclick = function() {
+    Game.init("canvas");
+    document.querySelector('.game-win').style.display = 'none'
+  }
 };
 
   

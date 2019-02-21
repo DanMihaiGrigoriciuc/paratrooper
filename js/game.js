@@ -19,14 +19,23 @@ var Game = {
         this.canvas.width = this.w;
         this.canvas.height = this.h;
 
+        this.audio= new Audio();
+         this.audio.src = "music/nightcore-anyplace-anywhere-anytime-nena.mp3";
+
+        this.explosion = new Audio();
+        this.explosion.src = "music/explosion.mp3"
+
         // Iniciamos la partida
-
-
         this.start();
-    },
 
+
+        // this.music = new Audio();
+        // this.music.src = "..."
+    },
     start: function () {
         this.reset()
+        this.audio.play();
+       
         for (var i = 0; i <= 6; i++) {
             this.enemies.push(new Enemies(this))
         }        
@@ -34,7 +43,7 @@ var Game = {
             this.frameCounter++
             if (this.frameCounter > 1000) {
                 this.frameCounter = 0
-            }   
+            } 
 
             if (this.isCollision()) {
                 console.log("choca")                
@@ -42,10 +51,10 @@ var Game = {
               }
             this.drawAll()
             this.moveAll()
-        }.bind(this), 1000 / this.fps);
 
-      
+        }.bind(this), 1000 / this.fps);      
     },
+
 
     stop: function () {
         clearInterval(this.interval);
@@ -53,19 +62,19 @@ var Game = {
 
     gameOver: function () {
         this.stop();
-        document.querySelector('.game-over').style.display = 'flex'
-       
+        document.querySelector('.game-over').style.display = 'flex';
+        this.explosion.play();
+            if(document.querySelector(".game-over").onclick = "none"){
+                
+            }       
     },
     gameWin: function () {
         this.stop();
         document.querySelector('.game-win').style.display = 'flex'
         
             if(document.querySelector(".game-win").onclick = "none"){
-
-                Game.init("canvas");
-            }
-        
-          
+                
+            }          
         
     },
     reset: function () {
@@ -140,3 +149,14 @@ var Game = {
 
 
 }
+    
+
+  /*
+    1. CREAR EL AUDIO
+    this.audio = new Audio();
+    this.audio.src = "tal.mp3"
+    2. REPRODUCIR (CUANDO QUIERAS)
+    this.audio.play();
+    3. PARAR
+    this.audio.pause();
+    */

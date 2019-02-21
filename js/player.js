@@ -9,18 +9,37 @@ function Player(game) {
   this.y = 200;
   this.lifeP = 5;
   this.bullets = []
+
+  this.imaglife = new Image()
+  this.imaglife.src = './img/star.png'
+  this.imaglifew = 50;
+  
+  this.audio = new Audio();
+  this.audio.src = "music/shoot.mp3"
 }
 
 Player.prototype.draw = function () {
   this.game.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   this.drawBullets();
+  this.drawLife();
 }
 
 Player.prototype.drawBullets = function() {
   this.bullets.forEach(function(bullet) {
     bullet.draw();
     bullet.move();
+
   });
+}
+
+Player.prototype.drawLife = function(){
+var x = this.game.w - 50;
+for( var i = 1; i <= this.lifeP;i++){
+  this.game.ctx.drawImage(this.imaglife, x, 20, this.imaglifew, this.imaglifew)
+  x -= this.imaglifew + 30
+}
+
+
 }
 
 
@@ -35,6 +54,7 @@ Player.prototype.move = function () {
         break;
         case 32:
         this.shoot();
+        this.audio.play();
         break;
     }
   }.bind(this)
