@@ -2,11 +2,15 @@ function Background (game){
     this.game = game
 
     this.img = new Image();
+    //this.img.src = "./img/cielo-campo-mercato-sfondo-america.jpg"
+    //this.img.src = "./img/autunno-cielo-verde-foresta-natura.jpg"
+    //this.img.src = "./img/colori-cielo-erba-campo-umore.jpg"
     this.img.src = './img/sky-with-clouds.jpg';
+
 
     this.x = 0;
     this.y = 0;
-    this.dy = 0.6
+    this.dy = 0.3
 
 }
 Background.prototype.draw = function (){
@@ -19,4 +23,4 @@ Background.prototype.move = function (){
 
     
 
-};   
+};  

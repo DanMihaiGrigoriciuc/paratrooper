@@ -6,3 +6,61 @@
 body {
     overflow: hidden;
 }
+
+.game-over, .game-win {
+    text-align: center;
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    color: white;
+    top: 0;
+
+}
+button{
+    border-radius: 50%;
+    
+
+}
+.logo{
+    
+    margin-top: 50%;
+    position: relative;
+}
+#canvas{
+    display: block;
+}
+.inicio{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/background.png);
+    background-size: contain;
+    background: black;
+}
+.inicio img{
+    height: 100vh;
+}   
+
+button#start-game {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+    margin: 0 auto;
+    background: #00695C;
+    border-color: #00695C;
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+    transition: all .2s ease-in-out;
+}
+
+button#start-game:hover {
+    background: #004D40;
+}
