@@ -27,27 +27,24 @@ var Game = {
 
     start: function () {
         this.reset()
-        for (var i = 0; i <= 5; i++) {
+        for (var i = 0; i <= 6; i++) {
             this.enemies.push(new Enemies(this))
-
-        }
-        
+        }        
         this.interval = setInterval(function () {
             this.frameCounter++
             if (this.frameCounter > 1000) {
                 this.frameCounter = 0
-            }
-            
+            }   
 
             if (this.isCollision()) {
-                console.log("choca")
-                
+                console.log("choca")                
                 this.gameOver();
               }
             this.drawAll()
             this.moveAll()
         }.bind(this), 1000 / this.fps);
 
+      
     },
 
     stop: function () {
@@ -56,15 +53,20 @@ var Game = {
 
     gameOver: function () {
         this.stop();
-        document.querySelector('.game-over').style.display = 'block'
-        // if (confirm("GAME OVER. Play again?")) {
-        //     this.reset();
-        //     this.start();
-        // }
+        document.querySelector('.game-over').style.display = 'flex'
+       
     },
     gameWin: function () {
         this.stop();
-        document.querySelector('.game-win').style.display = 'block'
+        document.querySelector('.game-win').style.display = 'flex'
+        
+            if(document.querySelector(".game-win").onclick = "none"){
+
+                Game.init("canvas");
+            }
+        
+          
+        
     },
     reset: function () {
         this.background = new Background(this);
@@ -85,31 +87,19 @@ var Game = {
                 {
                     console.log("le he dado")
                     this.player.bullets.splice(index, 1);
-
                     enemy.lifeE--;
                     if (enemy.lifeE === 0) {
                         this.enemies.splice(indexEnemy, 1);
-
                         console.log('quedan ', this.enemies.length, ' enemigos')
-
                         if(this.enemies.length == 0){
                             this.gameWin();
                         }
-                    }
-
-
-                    /*this.enemies.lifeE --;
-                    if(this.enemies.lifeE == 0){
-                        this.gameOver();
-                    }*/
-
-                    
+                    }                   
                     
                 }
              }.bind(this));
              
-             enemy.bullets.forEach(function(bullet, indexBullet){
-               // // (p.x + p.w > o.x && o.x + o.w > p.x && p.y + p.h > o.y && o.y + o.h > p.y )   
+             enemy.bullets.forEach(function(bullet, indexBullet){               
                if (this.player.x + this.player.w >= bullet.x &&
                 bullet.x + (bullet.r * 2) >= this.player.x &&
                 this.player.y + this.player.h >= bullet.y &&
@@ -121,8 +111,7 @@ var Game = {
                     console.log('vidas restantes', this.player.lifeP)
                     if(this.player.lifeP == 0){
                         this.gameOver();
-                    }
-                    
+                    }                    
                 }
                
              }.bind(this));           
@@ -133,8 +122,7 @@ var Game = {
 
     drawAll: function () {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.background.draw();
-        //this.avion.draw();      
+        this.background.draw();            
         this.player.draw();
         this.enemies.forEach(function (enemy) {
             enemy.draw();

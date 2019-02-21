@@ -16,7 +16,7 @@ function Enemies (game){
   this.h = 95;
 
   this.framesCounter = 0;
-  this.totalCounter = Math.floor(Math.random() * (200 - 80)+80);
+  this.totalCounter = Math.floor(Math.random() * (100 - 50)+50);
 
   this.bullets = []; 
   this.lifeE = 3;  

@@ -6,7 +6,10 @@
 body {
     overflow: hidden;
 }
-
+h1{
+    
+    color: red;
+}
 .game-over, .game-win {
     text-align: center;
     display: none;
@@ -16,17 +19,35 @@ body {
     background: black;
     color: white;
     top: 0;
-
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.game-over h1, .game-win h1 {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+}
+
+.game-win h1 {
+    color: #28a745;
+}
+
+button#ower-game, button#win-game {
+    font-size: 1.5rem;
+    border-width: 3px;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    font-weight: 900;
+}
+
 button{
-    border-radius: 50%;
-    
+    border-radius: 50%;   
 
 }
-.logo{
+#logo{    
+
     
-    margin-top: 50%;
-    position: relative;
 }
 #canvas{
     display: block;
@@ -47,7 +68,7 @@ button{
     height: 100vh;
 }   
 
-button#start-game {
+button#start-game{
     position: absolute;
     left: 0;
     right: 0;

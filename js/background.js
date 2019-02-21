@@ -1,10 +1,7 @@
 function Background (game){
     this.game = game
 
-    this.img = new Image();
-    //this.img.src = "./img/cielo-campo-mercato-sfondo-america.jpg"
-    //this.img.src = "./img/autunno-cielo-verde-foresta-natura.jpg"
-    //this.img.src = "./img/colori-cielo-erba-campo-umore.jpg"
+    this.img = new Image();   
     this.img.src = './img/sky-with-clouds.jpg';
 
 
