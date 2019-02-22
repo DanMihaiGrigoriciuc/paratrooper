@@ -1,7 +1,7 @@
-function Background (game){
+function Background(game) {
     this.game = game
 
-    this.img = new Image();   
+    this.img = new Image();
     this.img.src = './img/sky-with-clouds.jpg';
 
 
@@ -10,14 +10,14 @@ function Background (game){
     this.dy = 0.3
 
 }
-Background.prototype.draw = function (){
+Background.prototype.draw = function () {
     this.game.ctx.drawImage(this.img, this.x, this.y, this.game.canvas.width, this.game.canvas.height);
     this.game.ctx.drawImage(this.img, this.x, this.y + this.game.canvas.height, this.game.canvas.width, this.game.canvas.height);
-}    
-Background.prototype.move = function (){
+}
+Background.prototype.move = function () {
     this.y -= this.dy
     if (this.y < -this.game.canvas.height) this.y = 0;
 
-    
 
-};  
+
+};

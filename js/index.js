@@ -13,6 +13,14 @@ window.onload = function() {
     Game.init("canvas");
     document.querySelector('.game-win').style.display = 'none'
   }
+
+  document.querySelectorAll('.home').forEach(function(button) {
+    button.onclick = function() {
+      document.querySelector(".inicio").style.display = "block";
+      document.querySelector('.game-over').style.display = 'none';
+      document.querySelector('.game-win').style.display = 'none'; 
+    }
+  })
 };
 
   

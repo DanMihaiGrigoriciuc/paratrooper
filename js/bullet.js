@@ -1,9 +1,9 @@
-function Bullet (game, x, y){
-    this.game = game
+function Bullet(game, x, y) {
+  this.game = game
 
   this.x = x;
   this.y = y;
-  this.r = 3;
+  this.r = 4;
 
   this.vx = 1;
   this.vy = 2;
@@ -11,15 +11,15 @@ function Bullet (game, x, y){
   this.gravity = 3;
 
 }
-Bullet.prototype.draw = function() {
-    this.game.ctx.beginPath();
-    this.game.ctx.fillStyle = "yellow";
-    this.game.ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    this.game.ctx.fill();
-    this.game.ctx.closePath();
-  }
+Bullet.prototype.draw = function () {
+  this.game.ctx.beginPath();
+  this.game.ctx.fillStyle = "black";
+  this.game.ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+  this.game.ctx.fill();
+  this.game.ctx.closePath();
+}
 
-  Bullet.prototype.move = function() {
+Bullet.prototype.move = function () {
   this.x += this.vx;
 
   this.vy += this.gravity;
@@ -30,6 +30,6 @@ Bullet.prototype.draw = function() {
   }
 };
 
-Bullet.prototype.moveUp = function() {
+Bullet.prototype.moveUp = function () {
   this.y -= this.vy;
 }

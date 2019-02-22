@@ -7,7 +7,7 @@ function Player(game) {
 
   this.x = 600;
   this.y = 200;
-  this.lifeP = 5;
+  this.lifeP = 10;
   this.bullets = []
 
   this.imaglife = new Image()
@@ -39,9 +39,7 @@ for( var i = 1; i <= this.lifeP;i++){
   x -= this.imaglifew + 30
 }
 
-
 }
-
 
 Player.prototype.move = function () {
   document.onkeyup = function (e) {

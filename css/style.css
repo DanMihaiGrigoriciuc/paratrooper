@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +8,20 @@
 body {
     overflow: hidden;
 }
-h1{
-    
+
+h1 {
+
     color: red;
 }
-.game-over, .game-win {
+
+.game-over,
+.game-win {
     text-align: center;
     display: none;
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background: black;
+    background: #00695C;
     color: white;
     top: 0;
     flex-direction: column;
@@ -24,16 +29,26 @@ h1{
     justify-content: center;
 }
 
-.game-over h1, .game-win h1 {
+.game-over h1,
+.game-win h1 {
     font-size: 6rem;
     margin-bottom: 2rem;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.game-win {
+    background: url(../img/win.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .game-win h1 {
-    color: #28a745;
+    color: black;
+    margin-bottom: 14rem;
 }
 
-button#ower-game, button#win-game {
+button#ower-game,
+button#win-game {
     font-size: 1.5rem;
     border-width: 3px;
     padding: 1rem 2rem;
@@ -41,18 +56,29 @@ button#ower-game, button#win-game {
     font-weight: 900;
 }
 
-button{
-    border-radius: 50%;   
+button#win-game {
+    color: black;
+    border-color: black;
+}
+
+button#win-game {
+    background: black;
+    color: white;
+}
+
+button {
+    border-radius: 50%;
 
 }
-#logo{    
 
-    
-}
-#canvas{
+
+
+
+#canvas {
     display: block;
 }
-.inicio{
+
+.inicio {
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -60,28 +86,45 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(../img/background.png);
-    background-size: contain;
-    background: black;
-}
-.inicio img{
-    height: 100vh;
-}   
+    background-image: url(../img/paratrooper2.png);
+    background-size: cover;
+    background-position: center;
 
-button#start-game{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 1rem;
-    margin: 0 auto;
-    background: #00695C;
-    border-color: #00695C;
-    border-radius: 50%;
-    height: 7rem;
-    width: 7rem;
-    transition: all .2s ease-in-out;
-}
 
-button#start-game:hover {
-    background: #004D40;
-}
+    .inicio img {
+        height: 100vh;
+    }
+
+    button#start-game {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 1rem;
+        margin: 0 auto;
+        background: #00695C;
+        border-color: #00695C;
+        border-radius: 50%;
+        height: 7rem;
+        width: 7rem;
+        transition: all .2s ease-in-out;
+    }
+
+    button#start-game:hover {
+        background: #004D40;
+    }
+
+    .home {
+        background: #00695C;
+        border-color: #00695C;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: .01rem;
+        margin-top: 2rem;
+        border-radius: 20px;
+    }
+
+    .home:hover {
+        background: #004D40;
+        border-color: #004D40;
+    }
